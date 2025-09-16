@@ -14,6 +14,11 @@ void drawToggle(bool value, int x, int y) {
     }
 }
 
+void drawNextMonitorButton(int x, int y) {
+    DrawRectangle(x, y, 55, 30, LIGHTGRAY);
+    DrawText("Next", x + 5, y + 5, 20, DARKGRAY);
+}
+
 void renderSettings(void) {
 
     ClearBackground(RAYWHITE);
@@ -32,6 +37,13 @@ void renderSettings(void) {
     DrawText(FullscreenLabel, posX, listPosY, listFontSize, DARKGRAY);
 
     drawToggle(settings.fullscreen, MeasureText(FullscreenLabel, listFontSize) + 50, listPosY - 5);
+
+    char MonitorLabel[] = "- Monitor: ";
+    strcat(MonitorLabel, GetMonitorName(settings.windowNumber));
+
+    DrawText(MonitorLabel, posX, listPosY + 40, listFontSize, DARKGRAY);
+
+    drawNextMonitorButton(MeasureText(MonitorLabel, listFontSize) + 55, listPosY + 40 - 5);
 
     handleSettingMouseInput();
 }

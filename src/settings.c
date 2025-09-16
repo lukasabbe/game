@@ -10,8 +10,7 @@ struct Settings settings = {
 
 
 void applySettings(void) {
-    SetWindowSize(1920, 1080);
-    ToggleFullscreen();
+    ToggleBorderlessWindowed();
 }
 
 void saveSettings(void) {
