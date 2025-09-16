@@ -1,0 +1,1 @@
+void renderSettings(void);

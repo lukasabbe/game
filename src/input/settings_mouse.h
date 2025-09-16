@@ -1,0 +1,1 @@
+void handleSettingMouseInput(void);
